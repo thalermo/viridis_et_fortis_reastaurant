@@ -1,0 +1,40 @@
+.button {
+  font-family: 'inter', sans-serif;
+  text-transform: capitalize;
+  border: none;
+
+  // Animations//
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    box-shadow: 0.2rem 0.2rem 0.25rem rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+
+    // animation, scaling by hover
+    transform: scaleX(1.01);
+  }
+
+  &:active {
+    box-shadow: 0.2rem 0.2rem 0.26rem rgba(0, 0, 0, 0.5);
+    // animation, scaling and shifting down
+    transform: translateY(2px) scaleX(1.01);
+  }
+}
+
+//** Settings through the styledComponent
+// padding: 0.5em 4em;
+// background-color: white;
+// changes
+// font-weight: 700;
+// color: #3fb13d;
+// font-size: 30px;
+
+// &:hover {
+//   background-color: #3fb13d;
+//   color: white;
+
+// }
+// &:active {
+//   background-color: red;
+//   color: white;
+// }
