@@ -1,4 +1,72 @@
-body {
-  background-color: aliceblue;
-  height: 100vh;
+@use './sass/abstracts/' as abs;
+
+.App {
+  // height: 60rem;
+  // background-color: palevioletred;
+  height: 45rem;
+
+  .header {
+    height: 100%;
+    padding: 6rem 0 0 6rem;
+    //shorthand
+    // background: [background-image] [background-position] / [background-size] [background-repeat] [background-attachment] [background-origin] [background-clip] [background-color];
+
+    background: url(./assets/images/mein-dish_2_2x-removebg.png),
+      linear-gradient(to right, #232526, #414345);
+    background-repeat: no-repeat;
+    background-position: center right;
+
+    @include abs.respond(phone) {
+      background-image: linear-gradient(to right, #1a1a1a, #09090989),
+        url(./assets/images/mein-dish_2_2x-removebg.png);
+      background-repeat: no-repeat;
+
+      padding: 4rem 4rem;
+    }
+
+    .text-box {
+      width: 50%;
+      max-width: 45rem;
+      // background-color: rosybrown;
+      @include abs.respond(tab-port) {
+        width: 90%;
+      }
+      @include abs.respond(phone) {
+        width: 100%;
+      }
+
+      &__title {
+        font-family: Josefin Sans, sans-serif;
+        font-size: 5rem;
+        font-weight: 500;
+        color: white;
+
+        @include abs.respond(phone) {
+          font-size: 4rem;
+        }
+      }
+
+      &__sub-title {
+        font-family: Clash Display, sans-serif;
+        font-size: 2.5rem;
+        font-weight: 300;
+        letter-spacing: 1px;
+        color: white;
+        width: 60%;
+        line-height: 1.2;
+
+        margin-bottom: 4rem;
+
+        strong {
+          background-color: green;
+          font-weight: 500;
+        }
+
+        @include abs.respond(phone) {
+          width: 80%;
+          min-width: 20rem;
+        }
+      }
+    }
+  }
 }

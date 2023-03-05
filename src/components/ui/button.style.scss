@@ -1,7 +1,8 @@
-.button {
+.btn {
   font-family: 'inter', sans-serif;
   text-transform: capitalize;
   border: none;
+  display: block;
 
   // Animations//
   transition: all 0.3s ease-in-out;
