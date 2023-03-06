@@ -9,9 +9,8 @@ function Button(props) {
     `
     background: ${props.background};
     color:${props.color};
-    font-size:${props.fontSize};
-    font-weight: ${props.fontWeight};
-    padding: ${props.padding};  
+    font-weight: ${props.fontWeight}; 
+    padding:${props.padding};
 
       &:hover {
         background-color: ${props.color};

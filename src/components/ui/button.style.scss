@@ -1,8 +1,14 @@
+@use '../../sass/abstracts/' as abs;
+
 .btn {
-  font-family: 'inter', sans-serif;
+  font-family: 'Clash Display', sans-serif;
+  font-size: 2rem;
   text-transform: capitalize;
   border: none;
-  display: block;
+  display: inline-block;
+  width: max-content;
+  letter-spacing: 0.5px;
+  margin-block: 0.5em;
 
   // Animations//
   transition: all 0.3s ease-in-out;
@@ -20,22 +26,7 @@
     // animation, scaling and shifting down
     transform: translateY(2px) scaleX(1.01);
   }
+
+  @include abs.respond(tab-port) {
+  }
 }
-
-//** Settings through the styledComponent
-// padding: 0.5em 4em;
-// background-color: white;
-// changes
-// font-weight: 700;
-// color: #3fb13d;
-// font-size: 30px;
-
-// &:hover {
-//   background-color: #3fb13d;
-//   color: white;
-
-// }
-// &:active {
-//   background-color: red;
-//   color: white;
-// }

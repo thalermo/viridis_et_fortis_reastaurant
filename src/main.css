@@ -1,1 +1,1 @@
-*,*::before,*::before{box-sizing:inherit}html{font-size:62.5%}body{box-sizing:border-box;margin:0;padding:0}
+*,*::before,*::before{box-sizing:inherit;margin:0;padding:0}html{font-size:62.5%}@media(max-width: 75em){html{font-size:56.25%}}@media(max-width: 56.25em){html{font-size:50%}}@media(min-width: 100em){html{font-size:75%}}body{box-sizing:border-box}.u-padding-m{padding:7rem 3rem}
