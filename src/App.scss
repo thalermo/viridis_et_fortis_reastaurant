@@ -5,6 +5,28 @@
   // background-color: palevioletred;
   // height: 45rem;
   @include abs.respond(big-desktop) {
-    display: flex;
+    // display: flex;
+  }
+}
+
+.section-newsletter {
+  &__form.form {
+    flex-direction: row;
+    justify-content: center;
+    gap: 0;
+  }
+
+  &__label.form__group__label {
+  }
+
+  &__inputs.form__inputs {
+    flex: 0 0 35%;
+  }
+
+  &__group.form__group {
+    position: relative;
+    border: 2px solid #3fb13d;
+    width: 100%;
+    transform: scaleY(0.9);
   }
 }

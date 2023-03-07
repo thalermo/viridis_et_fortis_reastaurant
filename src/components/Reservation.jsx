@@ -9,10 +9,6 @@ import { RxChevronDown } from 'react-icons/rx';
 import '../sass/base/_utilities.scss';
 import Button from './ui/Button';
 
-
-
-
-
 function Reservation() {
 
   //  destructure reservation data
@@ -43,7 +39,7 @@ function Reservation() {
     <section className='section u-padding-m'>
 
       <form className='form'>
-        <h3 className='form__title'>make a reservation</h3>
+        <h3 className='u-section-title'>make a reservation</h3>
 
         <div className="form__inputs">
 

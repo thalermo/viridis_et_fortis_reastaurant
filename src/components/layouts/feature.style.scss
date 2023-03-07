@@ -1,0 +1,81 @@
+@use '../../sass/abstracts/' as abs;
+
+@font-face {
+  font-family: 'Tahoma';
+  src: url('../../assets/fonts/Tahoma/tahoma.ttf') format('ttf');
+}
+
+.feature {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+
+  &__content {
+    flex: 0 0 32%;
+
+    &__header {
+      font-family: 'Josefin Sans', sans-serif;
+      text-transform: uppercase;
+      font-weight: 700;
+      font-size: 4rem;
+      color: #3fb13d;
+    }
+    &__text {
+      font-family: 'Tahoma', sans-serif;
+      font-size: 2rem;
+      color: #191f1c7f;
+      line-height: 1.5;
+      letter-spacing: 0.5px;
+      padding-top: 2rem;
+    }
+  }
+
+  .feature__img-box {
+    flex: 0 0 35%;
+    z-index: 0;
+    position: relative;
+
+    &::after {
+      content: '';
+      width: 90%;
+      height: 90%;
+      border: #3fb13d solid 3px;
+      z-index: -1;
+      position: absolute;
+      bottom: -2rem;
+      right: -2rem;
+      transition: all 0.5s;
+    }
+    &:hover::after {
+      width: 100%;
+      height: 100%;
+      right: 1rem;
+      bottom: 1rem;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    aspect-ratio: 2/1;
+    z-index: 1;
+  }
+}
+
+.left-align {
+  order: -1;
+
+  &:hover::after {
+    width: 100%;
+    height: 100%;
+    left: 1rem;
+    top: 1rem;
+  }
+
+  &::after {
+    border: #3fb13d solid 3px;
+    top: -2rem;
+    left: -2rem;
+  }
+}
