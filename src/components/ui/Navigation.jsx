@@ -1,27 +1,35 @@
 import React from 'react';
-import './navigation.style.scss'
+import './navigation.style.scss';
+import logoFull from "../../assets/images/full_logo@2x.png";
+import logoIcon from "../../assets/images/viridis_logo@2x.png";
+
 
 
 function Navigation() {
   return (
     <div class="navigation">
-      <input type="checkbox" class="navigation__checkbox" id="navi-toggle" />
-      <label for="navi-toggle" class="navigation__button">
-        <span class="navigation__icon"> &nbsp;</span>
+      <input type="checkbox" className="navigation__checkbox" id='navi-toggle' />
+      <label for="navi-toggle" className='navigation__button'>
+        <span className="navigation__icon">&nbsp;</span>
       </label>
-      <div class="navigation__background">&nbsp;</div>
-      <nav class="navigation__nav">
-        <ul class="navigation__list">
-          <li class="navigation__item"><a href="#" class="navigation__link">
-            <span>01</span>About Natours</a></li>
-          <li class="navigation__item"><a href="#" class="navigation__link">
-            <span>02</span>Your benefits</a></li>
-          <li class="navigation__item"><a href="#" class="navigation__link">
-            <span>03</span>Popular tours</a></li>
-          <li class="navigation__item"><a href="#" class="navigation__link">
-            <span>04</span> Stories</a></li>
-          <li class="navigation__item"><a href="#" class="navigation__link">
-            <span>05</span> Book now</a></li>
+      <div className="navigation__background">&nbsp;</div>
+
+
+      <nav className='navigation__nav'>
+        <a href="#" className="navigation__logos">
+
+          <picture className='navigation__logo'>
+            <source srcSet={logoIcon} media='(max-width:60em)' />
+            <img srcSet={logoFull} alt="logo of the restaurant" className='navigation__full-logo' />
+          </picture>
+
+        </a>
+        <ul className="navigation__list">
+          <li className="navigation__item"><a href="" className="navigation__link">Book A Table</a></li>
+          <li className="navigation__item"><a href="" className="navigation__link">Why Us</a></li>
+          <li className="navigation__item"><a href="" className="navigation__link">About Us</a></li>
+          <li className="navigation__item"><a href="" className="navigation__link">Meet our Chef</a></li>
+          <li className="navigation__item"><a href="" className="navigation__link">Contact Us</a></li>
         </ul>
       </nav>
     </div>

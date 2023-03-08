@@ -1,4 +1,5 @@
 @use '../../sass/abstracts/' as abs;
+@use '../../sass/base/' as base;
 
 @font-face {
   font-family: 'Tahoma';
@@ -21,7 +22,7 @@
       color: #3fb13d;
     }
     &__text {
-      font-family: 'Tahoma', sans-serif;
+      font-family: Tahoma, sans-serif;
       font-size: 2rem;
       color: #191f1c7f;
       line-height: 1.5;

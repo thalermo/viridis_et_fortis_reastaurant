@@ -8,14 +8,16 @@ import Feature from './components/layouts/Feature';
 // import Reservation from './components/Reservation'; 
 import featureDish1 from "./assets/images/feature_dish1@2x.png";
 import featureDish2 from "./assets/images/feature_dish2@2x.png";
-import "./components/reservation.style.scss";
+import Newsletter from './components/ui/Newsletter';
+import Footer from './components/layouts/Footer';
+
 
 
 function App() {
 
   return (
     <div className="App">
-      {/* <Navigation /> */}
+      <Navigation />
       <Header >
         <Button
           text="Menu"
@@ -43,34 +45,17 @@ function App() {
         img={featureDish2}
         className="left-align"
       />
-
-      <section className="section-newsletter u-padding-m">
-        <h3 className='u-section-title'>our newsletter</h3>
-        <form className='section-newsletter__form form' action="#">
-          <div className="form__inputs section-newsletter__inputs">
-            <div className="form__group section-newsletter__group">
-              <label for="email " className=' section-newsletter__label form__group__label' >
-                <input
-                  type="email"
-                  className="section-newsletter__input form__group__input"
-                  placeholder='Enter your email address'
-                  value=""
-                />
-              </label>
-            </div>
-          </div>
-
-          <Button
-            className="btn"
-            text="submit"
-            color="white"
-            background="#3fb13d"
-            padding=" 1.5rem 5rem"
-            fontWeight="400"
-          />
-
-        </form>
-      </section>
+      <Newsletter>
+        <Button
+          className="btn"
+          text="submit"
+          color="white"
+          background="#3fb13d"
+          padding=" 1.5rem 5rem"
+          fontWeight="400"
+        />
+      </Newsletter>
+      <Footer />
     </div>
   );
 }
