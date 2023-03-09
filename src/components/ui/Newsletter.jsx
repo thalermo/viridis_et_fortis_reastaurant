@@ -3,7 +3,7 @@ import './newsletter.style.scss';
 
 function NewsLetter(props) {
   return (
-    <section className="section-newsletter u-padding-m">
+    <section id='newsletter' className="section-newsletter u-padding-m">
       <h3 className='u-section-title'>our newsletter</h3>
       <form className='section-newsletter__form form' action="#">
         <div className="form__inputs section-newsletter__inputs">

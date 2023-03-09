@@ -1,22 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './navigation.style.scss';
 import logoFull from "../../assets/images/full_logo@2x.png";
 import logoIcon from "../../assets/images/viridis_logo@2x.png";
 
 
-
 function Navigation() {
+
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <div class="navigation">
-      <input type="checkbox" className="navigation__checkbox" id='navi-toggle' />
-      <label for="navi-toggle" className='navigation__button'>
+      <input type="checkbox" className={"navigation__checkbox"} id='nav-toggle' />
+      <label for="nav-toggle" className='navigation__button' onClick={() => setIsOpen(!isOpen)} >
         <span className="navigation__icon">&nbsp;</span>
       </label>
-      <div className="navigation__background">&nbsp;</div>
+      <div className={`navigation__background ${isOpen ? "open" : ""}`}>&nbsp;</div>
 
 
-      <nav className='navigation__nav'>
-        <a href="#" className="navigation__logos">
+      <nav className={`navigation__nav ${isOpen ? "open" : ""}`}>
+        <a href="#hero" className="navigation__logos" onClick={() => setIsOpen(false)}>
 
           <picture className='navigation__logo'>
             <source srcSet={logoIcon} media='(max-width:60em)' />
@@ -24,15 +26,15 @@ function Navigation() {
           </picture>
 
         </a>
-        <ul className="navigation__list">
-          <li className="navigation__item"><a href="" className="navigation__link">Book A Table</a></li>
-          <li className="navigation__item"><a href="" className="navigation__link">Why Us</a></li>
-          <li className="navigation__item"><a href="" className="navigation__link">About Us</a></li>
-          <li className="navigation__item"><a href="" className="navigation__link">Meet our Chef</a></li>
-          <li className="navigation__item"><a href="" className="navigation__link">Contact Us</a></li>
+        <ul className="navigation__list" onClick={() => setIsOpen(false)}>
+          <li className="navigation__item"><a href="#reservation" className="navigation__link"  >Make a Reservation</a></li>
+          <li className="navigation__item"><a href="#why" className="navigation__link">Why Us</a></li>
+          <li className="navigation__item"  ><a href="#about" className="navigation__link"  >About Us</a></li>
+          <li className="navigation__item" ><a href="#meetChef" className="navigation__link">Meet our Chef</a></li>
+          <li className="navigation__item"  ><a href="#contact" className="navigation__link" >Contact Us</a></li>
         </ul>
       </nav>
-    </div>
+    </div >
   );
 }
 
