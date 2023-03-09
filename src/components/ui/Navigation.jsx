@@ -9,9 +9,9 @@ function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div class="navigation">
+    <div className="navigation" >
       <input type="checkbox" className={"navigation__checkbox"} id='nav-toggle' />
-      <label for="nav-toggle" className='navigation__button' onClick={() => setIsOpen(!isOpen)} >
+      <label htmlFor="nav-toggle" className='navigation__button' onClick={() => setIsOpen(!isOpen)} >
         <span className={`navigation__icon ${isOpen && "open"}`}>&nbsp;</span>
       </label>
       <div className={`navigation__background ${isOpen && "open"}`}>&nbsp;</div>

@@ -34,7 +34,7 @@
     display: flex;
     list-style: none;
     gap: 3rem;
-    align-self: flex-end;
+    // align-self: flex-end;
   }
 
   &__link {
@@ -48,17 +48,20 @@
       color: black;
       font-family: 'Josefin Sans', sans-serif;
       transition: all 0.3s;
+      padding-block: 10px;
     }
 
     &:hover,
     &:active {
       background-position: 100%;
       color: #3fb13d;
-      transform: translateX(1rem);
+      transform: translateY(5px);
     }
   }
 
-  @include abs.respond(tab-port) {
+  @include abs.respond(tab-land) {
+    padding: 0;
+
     &__logos {
       position: fixed;
       top: 3rem;
@@ -232,30 +235,30 @@
       top: 0;
     }
   }
+}
 
-  @keyframes fadeInFromNone {
-    0% {
-      opacity: 0;
-    }
+@keyframes fadeInFromNone {
+  0% {
+    opacity: 0;
+  }
 
-    20% {
-      opacity: 0;
-    }
+  20% {
+    opacity: 0;
+  }
 
-    40% {
-      opacity: 0.3;
-    }
+  40% {
+    opacity: 0.3;
+  }
 
-    60% {
-      opacity: 0.5;
-    }
+  60% {
+    opacity: 0.5;
+  }
 
-    80% {
-      opacity: 0.9;
-    }
+  80% {
+    opacity: 0.9;
+  }
 
-    100% {
-      opacity: 1;
-    }
+  100% {
+    opacity: 1;
   }
 }

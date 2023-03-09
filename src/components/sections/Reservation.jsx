@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { useForm } from "react-hook-form";
+
 // import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import './reservation.style.scss';
@@ -10,6 +12,8 @@ import '../../sass/base/_utilities.scss';
 import Button from '../ui/Button';
 
 function Reservation() {
+
+  const { register, handleSubmit } = useForm();
 
   //  destructure reservation data
   // const { title, subtitle, midelImg, btnText } = reservationData;
@@ -38,18 +42,18 @@ function Reservation() {
   return (
     <section id='reservation' className='section u-padding-m'>
 
-      <form className='form'>
+      <form className='form' onSubmit={handleSubmit}>
         <h3 className='u-section-title'>make a reservation</h3>
 
         <div className="form__inputs">
 
-          <div class="form__group">
-            <label for="numberOfPeople" class="form__group__label">
+          <div className="form__group">
+            <label htmlFor="numberOfPeople" className="form__group__label">
               <img src={PersonIcon} alt="" className='form__group__icon' />
               <input
                 className='form__group__input'
                 type="number"
-                name="numberOfPeople"
+                {...register("numberOfPeople")}
                 placeholder="2 persons"
                 value={numberOfPeople}
                 onChange={handleChangeNumberOfPeople}
@@ -59,8 +63,8 @@ function Reservation() {
             </label>
           </div>
 
-          <div class="form__group">
-            <label for="calendar" class="form__group__label">
+          <div className="form__group">
+            <label htmlFor="calendar" className="form__group__label">
               <img src={CalendarIcon} alt="" className='form__group__icon' />
               <input
                 className='form__group__input'
@@ -75,8 +79,8 @@ function Reservation() {
             </label>
           </div>
 
-          <div class="form__group">
-            <label for="calendar" class="form__group__label">
+          <div className="form__group">
+            <label htmlFor="calendar" className="form__group__label">
               <img src={clockIcon} alt="" className='form__group__icon' />
               <input
                 className='form__group__input'
@@ -107,3 +111,4 @@ function Reservation() {
 }
 
 export default Reservation;
+

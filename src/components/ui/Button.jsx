@@ -18,7 +18,7 @@ function Button(props) {
     `
 
   return (
-    <StyledButton className={props.className}>
+    <StyledButton type='submit' className={props.className}>
       {props.text}
     </StyledButton>
   )

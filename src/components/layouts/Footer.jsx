@@ -3,7 +3,7 @@ import './footer.style.scss'
 
 function Footer() {
   return (
-    <footer class="footer u-padding-s">
+    <footer className="footer u-padding-s" >
       <section className='footer__section'>
         <h4 className='u-section-title'>location</h4>
         <p className='footer__text'>Thaler Straße 106, Prenzlauer Berg, 10486, Berlin
