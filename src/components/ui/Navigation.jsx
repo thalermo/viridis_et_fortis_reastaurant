@@ -12,13 +12,13 @@ function Navigation() {
     <div class="navigation">
       <input type="checkbox" className={"navigation__checkbox"} id='nav-toggle' />
       <label for="nav-toggle" className='navigation__button' onClick={() => setIsOpen(!isOpen)} >
-        <span className="navigation__icon">&nbsp;</span>
+        <span className={`navigation__icon ${isOpen && "open"}`}>&nbsp;</span>
       </label>
-      <div className={`navigation__background ${isOpen ? "open" : ""}`}>&nbsp;</div>
+      <div className={`navigation__background ${isOpen && "open"}`}>&nbsp;</div>
 
 
-      <nav className={`navigation__nav ${isOpen ? "open" : ""}`}>
-        <a href="#hero" className="navigation__logos" onClick={() => setIsOpen(false)}>
+      <nav className={`navigation__nav ${isOpen && "open"}`}>
+        <a href="#" className="navigation__logos" onClick={() => setIsOpen(false)}>
 
           <picture className='navigation__logo'>
             <source srcSet={logoIcon} media='(max-width:60em)' />

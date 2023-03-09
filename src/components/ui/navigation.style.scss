@@ -219,14 +219,15 @@
       top: -1rem;
     }
 
-    &__checkbox:checked + &__button &__icon {
+    &__checkbox + &__button &__icon.open {
       background-color: transparent;
     }
-    &__checkbox:checked + &__button &__icon::before {
+
+    &__checkbox + &__button &__icon.open::before {
       transform: rotate(135deg);
       top: 0;
     }
-    &__checkbox:checked + &__button &__icon::after {
+    &__checkbox + &__button &__icon.open::after {
       transform: rotate(-135deg);
       top: 0;
     }
