@@ -8,25 +8,45 @@
   display: inline-block;
   width: max-content;
   letter-spacing: 0.5px;
-  margin-block: 0.5em;
-
+  // border-left: #3fb13d 2px solid;
   // Animations//
-  transition: all 0.3s ease-in-out;
+  transition: all 0.2s;
 
   &:hover {
     box-shadow: 0.2rem 0.2rem 0.25rem rgba(0, 0, 0, 0.15);
     cursor: pointer;
 
     // animation, scaling by hover
-    transform: scaleX(1.01);
   }
 
   &:active {
     box-shadow: 0.2rem 0.2rem 0.26rem rgba(0, 0, 0, 0.5);
-    // animation, scaling and shifting down
-    transform: translateY(2px) scaleX(1.01);
   }
 
-  @include abs.respond(tab-port) {
+  &-primary {
+    color: #3fb13d;
+    background: white;
+    font-weight: 800;
+    padding: 1.5rem 7rem;
+
+    &:hover {
+      background-color: #43c041;
+      color: white;
+    }
+
+    &:active {
+      background-color: #3fb13d9b;
+    }
+  }
+  &-inverse {
+    color: white;
+    background: #3fb13d;
+    font-weight: 400;
+    padding: 2rem 6rem;
+
+    &:hover {
+      background-color: #43c041;
+      box-shadow: 0.2rem 0.2rem 1rem rgba(0, 0, 0, 0.266);
+    }
   }
 }

@@ -18,7 +18,7 @@ function Navigation() {
 
 
       <nav className={`navigation__nav ${isOpen && "open"}`}>
-        <a href="#" className="navigation__logos" onClick={() => setIsOpen(false)}>
+        <a href="#home" className="navigation__logos" onClick={() => setIsOpen(false)}>
 
           <picture className='navigation__logo'>
             <source srcSet={logoIcon} media='(max-width:75em)' />
@@ -34,7 +34,7 @@ function Navigation() {
           <li className="navigation__item"  ><a href="#contact" className="navigation__link" >Contact Us</a></li>
         </ul>
       </nav>
-    </div >
+    </div>
   );
 }
 

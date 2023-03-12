@@ -8,24 +8,17 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 3vh;
+
+  // gap: 3vh;
 
   &__group {
-    background-color: white;
-    padding: 1rem 2rem;
-    box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
-
-    &:has(input:focus) {
-      box-shadow: rgba(0, 0, 0, 0.25) 0 0.0625rem 0.0625rem,
-        rgba(0, 0, 0, 0.25) 0 0.125rem 0.5rem, rgba(255, 255, 255, 0.1) 0 0 0 0;
-    }
+    background-color: transparent;
+    padding-inline: 1rem;
 
     &__label {
       display: flex;
-
-      // width: fit-content;
+      justify-content: space-evenly;
       align-items: center;
-      // gap: 1rem;
     }
 
     &__icon {
@@ -35,9 +28,15 @@
 
     &__input {
       border: none;
-      padding: 1rem;
+      margin: 2rem;
       outline: none;
-      width: 100%;
+      flex: 1;
+      // margin-inline: 2rem;
+      font-size: 1.8rem;
+
+      &::placeholder {
+        color: rgba(0, 0, 0, 0.371);
+      }
     }
   }
 
@@ -48,21 +47,8 @@
 
     .form__group {
       background-color: white;
-      padding: 1rem 2rem;
-      box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
-
-      &:has(input:focus) {
-        box-shadow: rgba(0, 0, 0, 0.25) 0 0.0625rem 0.0625rem,
-          rgba(0, 0, 0, 0.25) 0 0.125rem 0.5rem,
-          rgba(255, 255, 255, 0.1) 0 0 0 0;
-      }
 
       &__label {
-        display: flex;
-
-        // width: fit-content;
-        align-items: center;
-        // gap: 1rem;
       }
 
       &__icon {
@@ -72,7 +58,7 @@
 
       &__input {
         border: none;
-        padding: 1rem;
+        // padding: 1rem;
         outline: none;
         width: 100%;
       }
@@ -82,10 +68,4 @@
       }
     }
   }
-}
-
-.bg-dark {
-  // background-color: green;
-  width: 30rem;
-  height: 20rem;
 }

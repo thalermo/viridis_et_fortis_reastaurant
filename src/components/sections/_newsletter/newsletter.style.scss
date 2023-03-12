@@ -1,7 +1,13 @@
+@use '../../../scss/abstracts/' as abs;
+
 .section-newsletter {
+  width: 50%;
+  margin: 0 auto;
+
   &__form.form {
     flex-direction: row;
     justify-content: center;
+    border: solid 2px #3fb13d;
     gap: 0;
   }
 
@@ -9,13 +15,14 @@
   }
 
   &__inputs.form__inputs {
-    flex: 0 0 35%;
+    width: 100%;
   }
 
   &__group.form__group {
-    position: relative;
-    border: 2px solid #3fb13d;
     width: 100%;
-    transform: scaleY(0.8);
+  }
+
+  @include abs.respond(tab-port) {
+    width: 80%;
   }
 }
