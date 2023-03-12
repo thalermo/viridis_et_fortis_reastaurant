@@ -1,0 +1,12 @@
+@use '../../scss/abstracts/' as abs;
+
+.u-padding-m {
+  padding: 7rem 3rem;
+
+  @include abs.respond(phone) {
+    padding: 3rem 3rem;
+  }
+}
+.u-padding-s {
+  padding: 5rem 1rem;
+}

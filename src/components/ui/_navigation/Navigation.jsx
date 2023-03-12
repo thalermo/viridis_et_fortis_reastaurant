@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './navigation.style.scss';
-import logoFull from "../../assets/images/full_logo@2x.png";
-import logoIcon from "../../assets/images/viridis_logo@2x.png";
+import logoFull from "../../../assets/images/full_logo@2x.png";
+import logoIcon from "../../../assets/images/viridis_logo@2x.png";
 
 
 function Navigation() {
@@ -21,7 +21,7 @@ function Navigation() {
         <a href="#" className="navigation__logos" onClick={() => setIsOpen(false)}>
 
           <picture className='navigation__logo'>
-            <source srcSet={logoIcon} media='(max-width:60em)' />
+            <source srcSet={logoIcon} media='(max-width:75em)' />
             <img srcSet={logoFull} alt="logo of the restaurant" className='navigation__full-logo' />
           </picture>
 

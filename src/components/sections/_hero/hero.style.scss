@@ -1,5 +1,5 @@
-@use '../../sass/abstracts/' as abs;
-@use '../../sass/base/' as base;
+@use '../../../scss/abstracts/' as abs;
+@use '../../../scss/base/' as base;
 
 .hero {
   padding: 10vw;
@@ -7,14 +7,14 @@
   //shorthand
   // background: [background-image] [background-position] / [background-size] [background-repeat] [background-attachment] [background-origin] [background-clip] [background-color];
 
-  background: url(../../assets/images/mein-dish_2_2x-removebg.png),
+  background: url(../../../assets/images/mein-dish_2_2x-removebg.png),
     linear-gradient(to right, #232526, #414345);
   background-repeat: no-repeat;
   background-position: center right;
 
   @include abs.respond(phone) {
     background-image: linear-gradient(to right, #1a1a1a, #09090989),
-      url(../../assets/images/mein-dish_2_2x-removebg.png);
+      url(../../../assets/images/mein-dish_2_2x-removebg.png);
     background-repeat: no-repeat;
   }
 

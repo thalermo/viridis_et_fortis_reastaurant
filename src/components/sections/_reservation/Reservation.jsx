@@ -1,18 +1,19 @@
 import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
 
-// import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
+
 import './reservation.style.scss';
-import PersonIcon from "../../assets/icons/frame@2x.png";
-import CalendarIcon from "../../assets/icons/calendar@2x.png";
-import clockIcon from "../../assets/icons/clock@2x.png";
+import PersonIcon from "../../../assets/icons/frame@2x.png";
+import CalendarIcon from "../../../assets/icons/calendar@2x.png";
+import clockIcon from "../../../assets/icons/clock@2x.png";
 import { RxChevronDown } from 'react-icons/rx';
-import '../../sass/base/_utilities.scss';
-import Button from '../ui/Button';
+import '../../../scss/base/_utilities.scss';
+import Button from '../../ui/_button/Button';
+
+
 
 function Reservation() {
-
+  const [value, onChange] = useState(new Date());
   const { register, handleSubmit } = useForm();
 
   //  destructure reservation data
@@ -39,10 +40,16 @@ function Reservation() {
   //   setStartDate(value)
   // }
 
+  const [startDate, setStartDate] = useState(new Date());
+
+
+
   return (
     <section id='reservation' className='section u-padding-m'>
 
-      <form className='form' onSubmit={handleSubmit}>
+      <form className='form' onSubmit={handleSubmit((data) => {
+        console.log(data)
+      })}>
         <h3 className='u-section-title'>make a reservation</h3>
 
         <div className="form__inputs">
@@ -104,8 +111,12 @@ function Reservation() {
           padding=" 1.5rem 5rem"
           fontWeight="400"
         />
+
+
       </form>
+
     </section>
+
 
   );
 }

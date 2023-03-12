@@ -2,17 +2,17 @@
 import './App.scss';
 
 // UI COMPONENTS
-import Button from "./components/ui/Button";
-import Hero from "./components/sections/Hero";
+import Button from "./components/ui/_button/Button";
+import Hero from "./components/sections/_hero/Hero";
 
 // SECTIONS COMPONENTS
-import Navigation from './components/ui/Navigation';
-import Features from './components/sections/Features';
-import Newsletter from './components/ui/Newsletter';
-import Reservation from './components/sections/Reservation';
+import Navigation from './components/ui/_navigation/Navigation';
+import Features from './components/sections/_features/Features';
+import Newsletter from './components/sections/_newsletter/Newsletter';
+import Reservation from './components/sections/_reservation/Reservation';
 
 // LAYOUT COMPONENTS
-import Footer from './components/layouts/Footer';
+import Footer from './components/layouts/footer/Footer';
 
 
 
