@@ -52,13 +52,13 @@ function Reservation() {
       })}>
         <h3 className='u-section-title'>make a reservation</h3>
 
-        <div className="form__inputs">
+        <div className="form__inputs-container">
 
-          <div className="form__group">
-            <label htmlFor="numberOfPeople" className="form__group__label">
-              <img src={PersonIcon} alt="" className='form__group__icon' />
+          <div className="input-wrapper">
+            <label htmlFor="numberOfPeople" className="input-wrapper__label">
+              <img src={PersonIcon} alt="" className='input-wrapper__icon' />
               <input
-                className='form__group__input'
+                className='input-wrapper__input'
                 type="number"
                 {...register("numberOfPeople")}
                 placeholder="2 persons"
@@ -66,15 +66,15 @@ function Reservation() {
                 onChange={handleChangeNumberOfPeople}
                 id="numberOfPeople"
               />
-              <RxChevronDown className='form__group__arrow' />
+              <RxChevronDown className='input-wrapper__arrow' />
             </label>
           </div>
 
-          <div className="form__group">
-            <label htmlFor="calendar" className="form__group__label">
-              <img src={CalendarIcon} alt="" className='form__group__icon' />
+          <div className="input-wrapper">
+            <label htmlFor="calendar" className="input-wrapper__label">
+              <img src={CalendarIcon} alt="" className='input-wrapper__icon' />
               <input
-                className='form__group__input'
+                className='input-wrapper__input'
                 type="number"
                 name="calendar"
                 placeholder={date}
@@ -82,15 +82,15 @@ function Reservation() {
                 onChange={handleChangeDate}
                 id="numberOfPeople"
               />
-              <RxChevronDown className='form__group__arrow' />
+              <RxChevronDown className='input-wrapper__arrow' />
             </label>
           </div>
 
-          <div className="form__group">
-            <label htmlFor="calendar" className="form__group__label">
-              <img src={clockIcon} alt="" className='form__group__icon' />
+          <div className="input-wrapper">
+            <label htmlFor="calendar" className="input-wrapper__label">
+              <img src={clockIcon} alt="" className='input-wrapper__icon' />
               <input
-                className='form__group__input'
+                className='input-wrapper__input'
                 type="number"
                 name="calendar"
                 placeholder={time}
@@ -98,7 +98,7 @@ function Reservation() {
                 onChange={handleChangeDate}
                 id="numberOfPeople"
               />
-              <RxChevronDown className='form__group__arrow' />
+              <RxChevronDown className='input-wrapper__arrow' />
             </label>
           </div>
         </div>
@@ -107,7 +107,6 @@ function Reservation() {
           className="btn btn-inverse"
           text="reserve table"
         />
-
 
       </form>
 

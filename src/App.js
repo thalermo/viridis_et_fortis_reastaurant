@@ -25,7 +25,12 @@ function App() {
   return (
     <div className="App">
       <Navigation />
-      <Hero >
+      <Hero
+        title="Viridis et Fortis"
+        subtitle1="Who says Vegan food Has to be"
+        strong="Boring."
+        subtitle2="Come over and Taste for yourself."
+      >
         <Button
           text="Menu"
           className="btn btn-primary"

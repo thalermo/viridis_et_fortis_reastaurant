@@ -11,7 +11,7 @@
 
   gap: 2vh;
 
-  &__group {
+  .input-wrapper {
     background-color: transparent;
     padding-inline: 1rem;
 
@@ -40,12 +40,12 @@
     }
   }
 
-  &__inputs {
+  &__inputs-container {
     display: flex;
     justify-content: center;
     gap: 2vw;
 
-    .form__group {
+    .input-wrapper {
       background-color: white;
 
       &__label {

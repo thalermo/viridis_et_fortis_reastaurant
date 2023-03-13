@@ -7,11 +7,11 @@ function NewsLetter(props) {
       <h3 className='u-section-title'>our newsletter</h3>
       <form className='section-newsletter__form form' action="#">
 
-        <div className="form__group section-newsletter__group">
-          <label htmlFor="email " className=' section-newsletter__label form__group__label' >
+        <div className="input-wrapper section-newsletter__input-wrapper">
+          <label htmlFor="email " className=' section-newsletter__label input-wrapper__label' >
             <input
               type="email"
-              className="section-newsletter__input form__group__input"
+              className="section-newsletter__input input-wrapper__input"
               placeholder='Enter your email address'
             // value=""
             />
