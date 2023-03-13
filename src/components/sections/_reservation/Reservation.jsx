@@ -104,12 +104,8 @@ function Reservation() {
         </div>
 
         <Button
-          className="btn"
+          className="btn btn-inverse"
           text="reserve table"
-          color="white"
-          background="#3fb13d"
-          padding=" 1.5rem 5rem"
-          fontWeight="400"
         />
 
 
