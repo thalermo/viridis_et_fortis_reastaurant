@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import { useForm } from "react-hook-form";
-
 
 import './reservation.style.scss';
 import PersonIcon from "../../../assets/icons/frame@2x.png";
@@ -12,103 +10,168 @@ import Button from '../../ui/_button/Button';
 
 
 
-function Reservation() {
-  const [value, onChange] = useState(new Date());
-  const { register, handleSubmit } = useForm();
+function Reservation(props) {
 
-  //  destructure reservation data
-  // const { title, subtitle, midelImg, btnText } = reservationData;
+  const [steps, setSteps] = useState(0);
 
-  // data state 
-  // const [startDate, setStartDate] = useState(new Date());
-  const [numberOfPeople, setNumberOfPeople] = useState("");
-  const [date, setDate] = useState('6 Mar 2023');
-  const [time, setTime] = useState('8:00 PM');
+  const handleSubmit = (e) => {
+    console.log(props.values);
+    e.preventDefault();
+    setSteps(steps + 1)
+    console.log(steps);
 
+  };
 
-  const handleChangeNumberOfPeople = (e) => {
-    const value = e.target.value;
-    setNumberOfPeople(value);
+  const onChange = (e) => {
+    props.setValues({ ...props.values, [e.target.name]: e.target.value })
   }
-  const handleChangeDate = (e) => {
-    const value = e.target.value;
-    setDate(value);
-  }
-
-  // clock state 
-  // const onChangeDateHandler = (value) => {
-  //   setStartDate(value)
-  // }
-
-  const [startDate, setStartDate] = useState(new Date());
 
 
 
   return (
     <section id='reservation' className='section u-padding-m'>
 
-      <form className='form' onSubmit={handleSubmit((data) => {
-        console.log(data)
-      })}>
-        <h3 className='u-section-title'>make a reservation</h3>
+      {steps === 0 &&
 
-        <div className="form__inputs-container">
+        <form className='form' onSubmit={handleSubmit}>
+          <h3 className='u-section-title'>make a reservation</h3>
 
-          <div className="input-wrapper">
-            <label htmlFor="numberOfPeople" className="input-wrapper__label">
-              <img src={PersonIcon} alt="" className='input-wrapper__icon' />
-              <input
-                className='input-wrapper__input'
-                type="number"
-                {...register("numberOfPeople")}
-                placeholder="2 persons"
-                value={numberOfPeople}
-                onChange={handleChangeNumberOfPeople}
-                id="numberOfPeople"
-              />
-              <RxChevronDown className='input-wrapper__arrow' />
-            </label>
+          <div className="form__inputs-container">
+            <div className="input-wrapper">
+              <label htmlFor="numberOfPeople" className="input-wrapper__label">
+                <img src={PersonIcon} alt="" className='input-wrapper__icon' />
+                <input
+                  className='input-wrapper__input'
+                  type="number"
+                  placeholder="2 persons"
+                  id="number"
+                  onChange={onChange}
+                  value={props.values.persons}
+                  name="persons"
+                />
+                <RxChevronDown className='input-wrapper__arrow' />
+              </label>
+            </div>
+
+            <div className="input-wrapper">
+              <label htmlFor="calendar" className="input-wrapper__label">
+                <img src={CalendarIcon} alt="" className='input-wrapper__icon' />
+                <input
+                  className='input-wrapper__input'
+                  type="date"
+                  name="date"
+                  placeholder="2 March 2020"
+                  value={props.values.date}
+                  id="date"
+                  onChange={onChange}
+                />
+                <RxChevronDown className='input-wrapper__arrow' />
+              </label>
+            </div>
+
+            <div className="input-wrapper">
+              <label htmlFor="calendar" className="input-wrapper__label">
+                <img src={clockIcon} alt="" className='input-wrapper__icon' />
+                <input
+                  className='input-wrapper__input'
+                  type="time"
+                  name="time"
+                  placeholder="20:20"
+                  value={props.values.time}
+                  id="time"
+                  onChange={onChange}
+                />
+                <RxChevronDown className='input-wrapper__arrow' />
+              </label>
+            </div>
           </div>
 
-          <div className="input-wrapper">
-            <label htmlFor="calendar" className="input-wrapper__label">
-              <img src={CalendarIcon} alt="" className='input-wrapper__icon' />
-              <input
-                className='input-wrapper__input'
-                type="number"
-                name="calendar"
-                placeholder={date}
-                value={date}
-                onChange={handleChangeDate}
-                id="numberOfPeople"
-              />
-              <RxChevronDown className='input-wrapper__arrow' />
-            </label>
+          <Button
+            className="btn btn-inverse"
+            text="reserve table"
+          />
+        </form>}
+
+
+      {steps === 1 &&
+
+        <form className='form form--step1' onSubmit={handleSubmit}>
+          <h3 className='u-section-title'>make a reservation</h3>
+
+          <div className="form__inputs-container">
+            <div className="input-wrapper">
+              <label htmlFor="numberOfPeople" className="input-wrapper__label">
+                <img src={PersonIcon} alt="" className='input-wrapper__icon' />
+                <input
+                  className='input-wrapper__input'
+                  type="name"
+                  placeholder="Write your name"
+                  id="name"
+                  onChange={onChange}
+                  value={props.values.name}
+                  name="name"
+                />
+                <RxChevronDown className='input-wrapper__arrow' />
+              </label>
+            </div>
+
+            <div className="input-wrapper">
+              <label htmlFor="name" className="input-wrapper__label">
+                <img src={CalendarIcon} alt="" className='input-wrapper__icon' />
+                <input
+                  className='input-wrapper__input'
+                  type="email"
+                  name="email"
+                  placeholder="write your email"
+                  value={props.values.email}
+                  id="email"
+                  onChange={onChange}
+                />
+                <RxChevronDown className='input-wrapper__arrow' />
+              </label>
+            </div>
+
+            <div className="input-wrapper">
+              <label htmlFor="calendar" className="input-wrapper__label">
+                <img src={clockIcon} alt="" className='input-wrapper__icon' />
+                <input
+                  className='input-wrapper__input'
+                  type="number"
+                  name="phone"
+                  placeholder="write your phone number"
+                  value={props.values.phone}
+                  id="phone"
+                  onChange={onChange}
+                />
+                <RxChevronDown className='input-wrapper__arrow' />
+              </label>
+            </div>
+
+            <div className="input-wrapper">
+              <label htmlFor="note" className="input-wrapper__label">
+
+                <textarea
+                  className='input-wrapper__input'
+                  rows="4"
+                  cols="50"
+                  type="text"
+                  name="note"
+                  placeholder="additional information... "
+                  value={props.values.note}
+                  id="note"
+                  onChange={onChange}>
+                </textarea>
+
+              </label>
+            </div>
           </div>
 
-          <div className="input-wrapper">
-            <label htmlFor="calendar" className="input-wrapper__label">
-              <img src={clockIcon} alt="" className='input-wrapper__icon' />
-              <input
-                className='input-wrapper__input'
-                type="number"
-                name="calendar"
-                placeholder={time}
-                value={time}
-                onChange={handleChangeDate}
-                id="numberOfPeople"
-              />
-              <RxChevronDown className='input-wrapper__arrow' />
-            </label>
-          </div>
-        </div>
+          <Button
+            className="btn btn-inverse"
+            text="Confirm Reservation"
+          />
+        </form>}
 
-        <Button
-          className="btn btn-inverse"
-          text="reserve table"
-        />
-
-      </form>
 
     </section>
 

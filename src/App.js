@@ -19,8 +19,22 @@ import featureDish1 from "./assets/images/feature_dish1@2x.png";
 import featureDish2 from "./assets/images/feature_dish2@2x.png";
 
 import Feature from './components/layouts/feature/Feature';
+import { useState } from 'react';
 
 function App() {
+
+
+  const [values, setValues] = useState({
+    persons: '',
+    date: '',
+    time: '',
+    name: '',
+    email: '',
+    phone: '',
+    note: ''
+  })
+
+
 
   return (
     <div className="App">
@@ -36,7 +50,7 @@ function App() {
           className="btn btn-primary"
         />
       </Hero>
-      <Reservation />
+      <Reservation values={values} setValues={setValues} />
 
       <section className='features'>
         <Feature
